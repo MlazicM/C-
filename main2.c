@@ -1,22 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-/*
- * Program: Increment until 200
- * This program starts from 1 and increments a counter until it reaches 200,
- * then prints the final value.
- */
+#define MAX 50
 int main(void)
 {
-    /* Initialize counter to 1 */
-    int counter = 1;
+    int niz[MAX];
+    int i,n,broj,nemarezultat=-1;
+    do
+    {
+        printf("\nUnesite velicinu niza:");
+        scanf("\%d", &n);
+    }
+    while(n<1||n>MAX);
+    printf("Unos elemenata niza\n");
+    for(i=0;i<n;i++)
+    {
+        printf("\tElement [%d]= ", i);
+        scanf("%d", &niz[i]);
+    }
+    printf("Unesite broj koji trazite u nizu: ");
+    scanf("%d", &broj);
+    for(i=0;i<n;i++)
+        if(broj==niz[i])
+    {
+        printf("\nTrazeni element se nalazi na poziciji :%d\n", i);
+        nemarezultat=0;
+    }
+    if(nemarezultat==-1)
+        printf("\n\tTrazeni element se ne nalazi u nizu.\n");
 
-    /* Increment until counter is no longer less than 200 */
-    while (counter < 200)
-        counter++;
 
-    /* Print the final value followed by a newline */
-    printf("%d\n", counter);
 
     return 0;
 }

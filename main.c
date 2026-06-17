@@ -1,25 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-/*
- * Program: Print odd numbers less than 50
- * This program uses a simple while loop to print all odd numbers from 1 to 49.
- */
+#define MAX 50 //definisanje velicnine
 int main(void)
 {
-    /* Start with the first odd number */
-    int odd = 1;
-
-    /* Loop until we reach 50 (exclusive) */
-    while (odd < 50)
+    int niz[MAX]; //deklaracija celobrojnog niza od 50 elemenata
+    int i,n,min; //deklaracija promenljivih
+    do //zastita od pogresnog unosa
     {
-        /* Print the current odd number followed by a newline */
-        printf("%d\n", odd);
-
-        /* Move to the next odd number */
-        odd += 2; /* same as odd = odd + 2 */
+        printf("\nUnesite velicinu niza:");
+        scanf("%d", &n);
     }
-
-    /* Return 0 to indicate successful execution */
+    while(n<1 || n>MAX); //velicina mora biti u opsegu
+    printf("\nUnos elemenata niza:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("\tElement[%d]=",i);
+        scanf("%d", &niz[i]);
+    }
+    min=niz[0];
+    for(i=1;i<n;i++)
+        if(niz[i]<min)
+        min=niz[i];
+    printf("\nNajmanji element u nizu uma vrednost %d\n", min);
     return 0;
 }
