@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1783440329 source:d:\programiranje\2d array\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
